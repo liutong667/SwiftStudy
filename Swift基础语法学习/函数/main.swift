@@ -51,26 +51,50 @@ func test03() {
     print(res)
 }
 
-// 4、函数的文档注释
+// 4、函数的文档注释，格式如下
 func test04() {
     /// 求和（Summary）
     ///
     /// 两个数相加（Discussion）
+    /// - Parameter v1: 参数1
+    /// - Parameter v2: 参数2
+    /// - Returns: 两个数字和
     ///
-    ///
+    /// - Note: 批注
     ///
     func sum(v1: Int, v2: Int) -> Int {
         v1 + v2
     }
-    sum(v1: 1, v2: 2)
+    _ = sum(v1: 1, v2: 2)
 }
 
 /// 5、参数标签（Argument Label）
 func test05() {
+    /// time是参数标签
+    func goToWork00(time: String) {
+        print("go to work at \(time)")
+    }
+    goToWork00(time: "8:00")
     
+    /// 参数标签可修改
+    func goToWork01(at time: String) {
+        print("go to work at \(time)")
+    }
+    goToWork01(at: "8:00")
+    
+    /// 可使用下划线_省略参数标签
+    func goToWork02(_ time: String) {
+        print("go to work at \(time)")
+    }
+    goToWork02("8:00")
 }
+
+/// 6、默认参数值（default parameter value）
 func test06() {
-    
+    /// 参数可以有默认值
+    func check() {
+        print();
+    }
 }
 func test07() {
     
@@ -84,8 +108,38 @@ func test09() {
 func test10() {
     
 }
+//func test06() {
+//
+//}
+//func test07() {
+//
+//}
+//func test08() {
+//
+//}
+//func test09() {
+//
+//}
+//func test10() {
+//
+//}
+//func test06() {
+//
+//}
+//func test07() {
+//
+//}
+//func test08() {
+//
+//}
+//func test09() {
+//
+//}
+//func test10() {
+//
+//}
 
-test03()
+test06()
 ///
 
 class Person {
