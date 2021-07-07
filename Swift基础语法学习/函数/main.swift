@@ -92,16 +92,57 @@ func test05() {
 /// 6、默认参数值（default parameter value）
 func test06() {
     /// 参数可以有默认值
-    func check() {
-        print();
+    func check(name: String = "Jack", age: Int, job: String = "teacher") {
+        print("name = \(name), age = \(age), job = \(job)");
     }
+    check(age: 25) // name = Jack, age = 25, job = teacher
+    check(name: "Rose", age: 23) // name = Rose, age = 23, job = teacher
+    /// c++的默认参数值：必须从右往左设置；swift拥有参数标签，所有没有此种限制
+    /// 但在省略参数标签时，需要注意。eg：下面函数的middle不可以省略函数标签
+    func test(_ start: Int = 1, middle: Int, _ end: Int = 3) {
+        print(start, middle, end)
+    }
+//    test(middle: 6)
+//    test(10, middle: 11, 12)
 }
+
+/// 7、可变参数（Variadic Parameter）
 func test07() {
+    func sum (_ numbers: Int...) -> Int {
+        var total = 0
+        for number in numbers {
+            total += number
+        }
+        return total
+    }
+    print(sum(1,2,3))
+    /// 一个函数最多只能有1个可变参数，跟在可变参数后面的参数不能省略参数标签
+    func test(_ numbers: Int..., a: String, _ b: String) {
+    }
+    test(1,2,3, a: "a", "b")
     
 }
+
+/// 8、自带的print函数
 func test08() {
-    
+    /*
+     /// - Parameters:
+     ///   - items: Zero or more items to print.
+     ///   - separator: A string to print between each item. The default is a single
+     ///     space (`" "`).
+     ///   - terminator: The string to print after all items have been printed. The
+     ///     default is a newline (`"\n"`).
+     public func print(_ items: Any..., separator: String = " ", terminator: String = "\n")
+     */
+    print(1, 2, 3, 4, 5, separator: "")
+    print(1, 2, 3, 4, 5, separator: "", terminator:"")
+    /* print result
+     12345
+     12345Program ended with exit code: 0
+     */
 }
+
+/// 9、
 func test09() {
     
 }
@@ -139,7 +180,7 @@ func test10() {
 //
 //}
 
-test06()
+test08()
 ///
 
 class Person {
