@@ -1,14 +1,12 @@
 //
 //  main.swift
-//  Swift基础语法学习
+//  泛型
 //
-//  Created by liutong on 2019/8/19.
-//  Copyright © 2019 刘通. All rights reserved.
+//  Created by liutong on 2021/7/24.
+//  Copyright © 2021 刘通. All rights reserved.
 //
 
 import Foundation
-
-print("Hello, World!")
 
 ///
 func test01() {
@@ -82,38 +80,6 @@ func test10() {
 
 }
 test10()
-
-///
-func test11() {
-    print("-------------test11-------------------")
-
-}
-test11()
-
-///
-func test12() {
-    print("-------------test12-------------------")
-
-}
-test12()
-
-///
-func test13() {
-    print("-------------test13-------------------")
-
-}
-test13()
-
-///
-func test14() {
-    print("-------------test14-------------------")
-
-}
-test14()
-
-
-
-
 
 
 
