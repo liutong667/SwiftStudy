@@ -76,4 +76,40 @@ doubleValue = Double(intValuek)
 print(intValuek)
 print(doubleValue)
 
+let eAcute: Character = "\u{E9}"                         // é
+let combinedEAcute: String = "\u{65}\u{301}"          // e 后面加上
+// eAcute 是 é, combinedEAcute 是 é
+print(eAcute, combinedEAcute, MemoryLayout.size(ofValue: eAcute),MemoryLayout.size(ofValue: combinedEAcute))
 
+let combinedEAcute1: Character = "\u{65}"          // e 后面加上
+let combinedEAcute2: Character = "\u{301}"          // e 后面加上
+let tempstr = String([combinedEAcute1, combinedEAcute2])
+print(combinedEAcute1, combinedEAcute2, tempstr, tempstr.count, tempstr[tempstr.startIndex], tempstr.startIndex)
+
+let precomposed: Character = "\u{D55C}"                  // 한
+let decomposed: String = "\u{1112}\u{1161}\u{11AB}"   // ᄒ, ᅡ, ᆫ
+// precomposed 是 한, decomposed 是 한
+print(precomposed, decomposed)
+
+let enclosedEAcute: Character = "\u{E9}\u{20DD}"
+// enclosedEAcute 是 é⃝
+print(enclosedEAcute)
+
+let regionalIndicatorForUS: Character = "\u{1F1FA}\u{1F1F8}"
+// regionalIndicatorForUS 是 🇺🇸
+print(regionalIndicatorForUS, regionalIndicatorForUS)
+
+var word = "cafe"
+print("the number of characters in \(word) is \(word.count)")
+// 打印输出“the number of characters in cafe is 4”
+
+word += "\u{301}"    // 拼接一个重音，U+0301
+
+print("the number of characters in \(word) is \(word.count)")
+// 打印输出“the number of characters in café is 4”
+for character in word {
+    print(character)
+}
+
+var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+airports.keys

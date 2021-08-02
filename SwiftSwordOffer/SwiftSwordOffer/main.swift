@@ -52,24 +52,22 @@ test01()
 func test02() {
     print("-------------test02-------------------")
     func findNumberIn2DArray(_ matrix: [[Int]], _ target: Int) -> Bool {
-        let rows = matrix.count
-        let columns = matrix[0].count
-        if rows == 0 || columns == 0 {
+        if matrix.count == 0 {
             return false
         }
-        var row = 0, column = 0
-        while row < rows && column < columns {
-            let value = matrix[row][column]
+        if matrix[0].count == 0 {
+            return false
+        }
+        let rows = matrix.count, columns = matrix[0].count
+        var startRow = 0, startColumn = columns - 1
+        while startRow < rows && startColumn >= 0 {
+            let value = matrix[startRow][startColumn]
             if target == value {
                 return true
-            } else if (target < value) {
-                return false
+            } else if (target > value) {
+                startRow += 1
             } else {
-                if row < rows - 1 {
-                    row += 1
-                } else if column < columns - 1 {
-                    column += 1
-                }
+                startColumn -= 1
             }
         }
         return false
@@ -81,35 +79,51 @@ func test02() {
         [10, 13, 14, 17, 24],
         [18, 21, 23, 26, 30]
       ]
-    print(222)
+    let arr2:[[Int]] = []
     print(findNumberIn2DArray(arr, 12))
-    print(111)
+    print(findNumberIn2DArray(arr2, 12))
 }
 test02()
 
 
-///
+/* 05. 替换空格
+ 
+ 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
+ 
+ 示例 1：
+ 输入：s = "We are happy."
+ 输出："We%20are%20happy.
+ */
 func test03() {
     print("-------------test03-------------------")
+    func replaceSpace(_ s: String) -> String {
 
+        return ""
+    }
 }
 test03()
 
-///
+/*
+ 
+ */
 func test04() {
     print("-------------test04-------------------")
 
 }
 test04()
 
-///
+/*
+ 
+ */
 func test05() {
     print("-------------test05-------------------")
 
 }
 test05()
 
-///
+/*
+ 
+ */
 func test06() {
     print("-------------test06-------------------")
 
@@ -117,14 +131,18 @@ func test06() {
 test06()
 
 
-///
+/*
+ 
+ */
 func test07() {
     print("-------------test07-------------------")
 
 }
 test07()
 
-///
+/*
+ 
+ */
 func test08() {
     print("-------------test08-------------------")
 
@@ -132,51 +150,57 @@ func test08() {
 test08()
 
 
-///
+/*
+ 
+ */
 func test09() {
     print("-------------test09-------------------")
 
 }
 test09()
 
-///
+/*
+ 
+ */
 func test10() {
     print("-------------test10-------------------")
 
 }
 test10()
 
-///
+/*
+ 
+ */
 func test11() {
     print("-------------test11-------------------")
 
 }
 test11()
 
-///
+/*
+ 
+ */
 func test12() {
     print("-------------test12-------------------")
 
 }
 test12()
 
-///
+/*
+ 
+ */
 func test13() {
     print("-------------test13-------------------")
 
 }
 test13()
 
-///
+/*
+ 
+ */
 func test14() {
     print("-------------test14-------------------")
 
 }
 test14()
-
-
-
-
-
-
 
