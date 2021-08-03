@@ -299,24 +299,23 @@ test07()
 /// 可选项的可选项
 func test08() {
     print("-------------test08-------------------")
-
+    var age0: Int? = 10
+    var age00: Int?? = age0
+    print(age0, age00)
+    age0 = nil
+    print(age0, age00)
+    
+    var age1 = Optional.some(Optional.some(10))
+    var age11: Optional<Optional> = .some(10)
+    age1 = nil
+    print("age1 = ", age1, age11)
+    
+    var age2: Int?? = 10
+    var age22: Optional<Optional> = 10
+    print("age2 = ", age2, age22)
 }
 test08()
 
-
-///
-func test09() {
-    print("-------------test09-------------------")
-
-}
-test09()
-
-///
-func test10() {
-    print("-------------test10-------------------")
-
-}
-test10()
 
 
 

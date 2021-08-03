@@ -28,27 +28,16 @@ func test01() {
         if nums.isEmpty {
             return 0
         }
-        var result = 0
-        var tempSum = 0
-        for numValue in nums {
-            if numValue > 0 {
-                if tempSum == 0 {
-                    result += numValue
-                    tempSum = numValue
-                } else if tempSum > 0 {
-                    result += tempSum
-                    tempSum = 0
-                } else {
-                    tempSum = numValue
-                }
+        var result = nums[0]
+        var sum = 0
+        for i in nums {
+            if sum > 0 {
+                sum += i
             } else {
-                tempSum += numValue
+                sum = i
             }
+            result = result > sum ? result : sum
         }
-        if tempSum > 0 {
-            result += tempSum
-        }
-        
         return result
     }
     let arr = [-2,1,-3,4,-1,2,1,-5,4]
